@@ -5,22 +5,26 @@
 
 int main(){
     char caracter;
-    while ((caracter=getchar ()) != '\n' )
-       {
-         
-         if (islower(caracter)) 
-          {
-             caracter =toupper(caracter);
-          }
-         else {caracter =tolower(caracter);}
-          if(isdigit(caracter))
-          {
-          caracter= 0;
-          }
-    
-       putchar(caracter);
-      
-      }
+    int bol;
+    while ((caracter=getchar ()) != EOF )
+    {
+        if(isdigit(caracter))
+        {
+          	bol= 1;
+        }
+        else 
+        {
+          	bol =0;
+        }
+        if (islower(caracter) && bol==0  ) 
+        {
+            putchar(caracter = toupper(caracter));
+        }
+        else if (bol==0)
+		{
+			putchar(caracter = tolower(caracter));
+		} 
+    }
 }
 
 
